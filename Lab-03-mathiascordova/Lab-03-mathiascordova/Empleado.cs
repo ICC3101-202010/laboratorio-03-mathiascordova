@@ -8,11 +8,8 @@ namespace Lab_03_mathiascordova
 {
     class Empleado: Persona
     {
-        public List<Object> Trabajadores = new List<Object>();
+        protected string Sueldo;
+        protected string Horario;
         
-        public void AgregarTrabajadores()
-        {
-            
-        }
     }
 }

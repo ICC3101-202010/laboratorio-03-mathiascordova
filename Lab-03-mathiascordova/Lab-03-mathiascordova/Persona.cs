@@ -9,7 +9,7 @@ namespace Lab_03_mathiascordova
     class Persona
     {
         private string RUT;
-        //public string _RUT { get => RUT; set => RUT = value; }//
+        
 
         private string Nombre;
         
@@ -18,16 +18,16 @@ namespace Lab_03_mathiascordova
         
 
         private string Fecha;
-        //public string _Fecha { get => Fecha; set => Fecha = value; }//
+        
 
         private string Nacion;
         
 
 
 
-        protected List<String> Nombres = new List<String>() { "Natalia", "Mathias", "Maria Belen", "Kylian", "Agustin", "Charlotte" };
-        protected List<String> Apellidos = new List<String>() {"Sanchez","Cordova","Medel","Mbappe","Messi","Jobs" };
-        protected List<String> Naciones = new List<String>() { "Chilena", "Argentina", "Francesa", "Alemana", "Gringa", "Italiana", "Coreana" };
+        protected List<String> Nombres = new List<String>() { "Cristina", "Mathias", "Maria Belen", "Kylian", "Agustin", "Charlotte", "Alvaro","Diego","Francisca","Martina","Sebastian","Lorena","Natalia"};
+        protected List<String> Apellidos = new List<String>() {"Sanchez","Cordova","Medel","Mbappe","Messi","Jobs" ,"Soto", "Perez", "Rodriguez", "Fuentes", "Arriagada", "Howard", "Diaz", "Londra", "Ruiz", "Tagle" };
+        protected List<String> Naciones = new List<String>() { "Chilena", "Argentina", "Francesa", "Alemana", "Gringa", "Italiana", "Coreana", "Venezolana", "Ecuatoriana", "Peruana", "Mexicana" };
 
         public void setNomApeNac()
         {
@@ -35,9 +35,15 @@ namespace Lab_03_mathiascordova
             int ale1 = random.Next(0, Nombres.Count());
             int ale2 = random.Next(0, Apellidos.Count());
             int ale3 = random.Next(0, Naciones.Count());
+            int dia = random.Next(1, 29);
+            int mes = random.Next(1, 13);
+            int ano = random.Next(1930, 2015);
+
             this.Nombre = Nombres[ale1];
             this.Apellido = Apellidos[ale2];
             this.Nacion = Naciones[ale3];
+            this.Fecha = dia.ToString() + "/" + mes.ToString() + "/" + ano.ToString();
+            
         }
 
         public void setRUT()
@@ -98,7 +104,7 @@ namespace Lab_03_mathiascordova
         }
         public string getNomApNac()
         {
-            return Nombre + " " + Apellido + ", " + Nacion;
+            return Nombre + " " + Apellido + ", "+Fecha+" " + Nacion+" "+RUT;
         }
     }  
 }
