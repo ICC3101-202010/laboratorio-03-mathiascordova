@@ -48,12 +48,12 @@ namespace Lab_03_mathiascordova
         }
         public string getDatos()
         {            
-            return "Nombre: " + Nombre+Environment.NewLine + "Marca: " + Marca +Environment.NewLine+ "Stock: " + Stock;
+            return "Nombre: " + Nombre+Environment.NewLine + "Marca: " + Marca +Environment.NewLine+"Precio: "+Precio+Environment.NewLine+ "Stock: " + Stock;
         }
         public string getDatosCompra()
         {
             
-            return Nombre + " " + Marca +Environment.NewLine +"Cliente: " + Cliente.soloNom()  + Environment.NewLine+"Cajero: " + Cajero.soloNom() + Environment.NewLine + "Fecha: "+Fecha+Environment.NewLine+"Hora: "+Hora.ToString()+ Environment.NewLine + "Stock despues de compra: "+ Stock.ToString();
+            return Nombre + " " + Marca +Environment.NewLine + "Precio: " + Precio + Environment.NewLine+"Cliente: " + Cliente.soloNom()  + Environment.NewLine+"Cajero: " + Cajero.soloNom() + Environment.NewLine + "Fecha: "+Fecha+Environment.NewLine+"Hora: "+Hora.ToString()+ Environment.NewLine + "Stock despues de compra: "+ Stock.ToString();
         }
         public int checkStock()
         {
