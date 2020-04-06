@@ -387,6 +387,10 @@ namespace Lab_03_mathiascordova
                         int numCompras=random.Next(1, 5);
                         Console.WriteLine("COMPRA DEL DIA NRO.: "+ (x+1));
                         Console.WriteLine("");
+                        Console.WriteLine("CLIENTE: "+allClientes[randCliente].getNomApNac()+", ClientID: ",allClientes[randCliente].getID());
+                        Console.WriteLine("");
+                        Console.WriteLine("NUMERO DE OBJETOS COMPRADOS: "+numCompras);
+                        Console.WriteLine("");
                         for (int a = 0; a < numCompras; a++)
                         {
                             int randCompra = random.Next(allProductos.Count());

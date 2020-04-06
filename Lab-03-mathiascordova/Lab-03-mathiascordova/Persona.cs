@@ -91,7 +91,7 @@ namespace Lab_03_mathiascordova
         
         public string getNomApNac()
         {
-            return this.Nombre + " " + this.Apellido + ", "+ this.Fecha +" " + this.Nacion+ " " + this.RUT;
+            return this.Nombre + " " + this.Apellido + ", Nac.: "+ this.Fecha +", Pais: " + this.Nacion+ ", RUT: " + this.RUT;
         }
         public string getRUT()
         {
