@@ -10,6 +10,24 @@ namespace Lab_03_mathiascordova
     {
         protected string Sueldo;
         protected string Horario;
-        
+        public void setSueldo(string Sueldo)
+        {
+            this.Sueldo = Sueldo;
+            
+        }
+        public void setHorario(string Horario)
+        {
+            this.Horario = Horario;
+        }
+        public string getSueldo()
+        {
+            return Sueldo;
+        }
+        public string getHorario()
+        {
+            return Horario;
+        }
+
     }
+    
 }

@@ -8,80 +8,70 @@ namespace Lab_03_mathiascordova
 {
     class Persona
     {
-        private string RUT;
+        protected List<String> Nombres = new List<String>() { "Cristina", "Mathias", "Maria Belen", "Kylian", "Agustin", "Charlotte", "Alvaro", "Diego", "Francisca", "Martina", "Sebastian", "Lorena", "Natalia", "Javier","Raul" };
+        protected List<String> Apellidos = new List<String>() { "Sanchez", "Cordova", "Medel", "Mbappe", "Messi", "Jobs", "Soto", "Perez", "Rodriguez", "Fuentes", "Arriagada", "Howard", "Diaz", "Londra", "Ruiz" };
+        protected List<String> Naciones = new List<String>() { "Chilena", "Argentina", "Francesa", "Alemana", "Gringa", "Italiana", "Coreana", "Venezolana", "Ecuatoriana", "Peruana", "Mexicana", "Venezolana", "Ecuatoriana", "Peruana", "Mexicana" };
         
 
-        private string Nombre;
+        protected string RUT;
         
 
-        private string Apellido;
+        protected string Nombre;
         
 
-        private string Fecha;
+        protected string Apellido;
         
 
-        private string Nacion;
+        protected string Fecha;
+        
+
+        protected string Nacion;
+
         
 
 
 
-        protected List<String> Nombres = new List<String>() { "Cristina", "Mathias", "Maria Belen", "Kylian", "Agustin", "Charlotte", "Alvaro","Diego","Francisca","Martina","Sebastian","Lorena","Natalia"};
-        protected List<String> Apellidos = new List<String>() {"Sanchez","Cordova","Medel","Mbappe","Messi","Jobs" ,"Soto", "Perez", "Rodriguez", "Fuentes", "Arriagada", "Howard", "Diaz", "Londra", "Ruiz", "Tagle" };
-        protected List<String> Naciones = new List<String>() { "Chilena", "Argentina", "Francesa", "Alemana", "Gringa", "Italiana", "Coreana", "Venezolana", "Ecuatoriana", "Peruana", "Mexicana" };
 
-        public void setNomApeNac()
+        public void setNomApeNac(int ale1,int ale2,int ale3,int dia,int mes,int ano)
         {
-            Random random = new Random();
-            int ale1 = random.Next(0, Nombres.Count());
-            int ale2 = random.Next(0, Apellidos.Count());
-            int ale3 = random.Next(0, Naciones.Count());
-            int dia = random.Next(1, 29);
-            int mes = random.Next(1, 13);
-            int ano = random.Next(1930, 2015);
-
-            this.Nombre = Nombres[ale1];
+            
+            this.Nombre = Nombres[ale1];                       
             this.Apellido = Apellidos[ale2];
             this.Nacion = Naciones[ale3];
             this.Fecha = dia.ToString() + "/" + mes.ToString() + "/" + ano.ToString();
             
+            
+        }
+        public void setNombre(string Nombre,string Apellido,string Nacion,string RUT,List<int> Fecha)
+        {
+            this.Nombre = Nombre;
+            this.Apellido = Apellido;
+            this.Nacion = Nacion;
+            this.Fecha = Fecha[0].ToString() + "/" + Fecha[1].ToString() + "/" + Fecha[2].ToString();
+            this.RUT = RUT;
         }
 
-        public void setRUT()
+
+        public void setRUT(List<int> num) //NOTEMOS QUE ESTE METODO CREA RUT VALIDOS, APRECIEN LA DEDICACION//
         {
-            Random random = new Random();
+
             int verificador = 0;
-            int n1 = random.Next(0, 3);
-            if (n1 == 0)
+            int ponderador = 7;
+            this.RUT += num[0].ToString()+num[1].ToString()+".";
+
+            for (int i = 0; i < 6; i++)
             {
-                this.RUT += n1.ToString();
-                int n2 = random.Next(5, 10);
-                verificador += n2 * 2;
-                this.RUT += n2.ToString();
+                this.RUT += num[i + 2].ToString();
+                verificador += num[i + 2]*ponderador;
+                if (i == 2)
+                {
+                    this.RUT += ".";
+                }
+                ponderador--;
+
             }
-            if (n1 == 1)
-            {
-                this.RUT += n1.ToString();
-                verificador += n1 * 3;
-                int n2 = random.Next(0, 10);
-                verificador += n2 * 2;
-                this.RUT += n2.ToString();
-            }
-            else if (n1 == 2)
-            {
-                this.RUT += n1.ToString();
-                verificador += n1 * 3;
-                int n2 = random.Next(0, 4);
-                verificador += n2 * 2;
-                this.RUT += n2.ToString();
-            }
-            int constante = 7;
-            for (int i=0; i < 6; i++)
-            {
-                int n = random.Next(0, 10);
-                verificador += n * constante;
-                this.RUT += n.ToString();
-                constante -= 1;
-            }
+
+
             int guion =11 - verificador % 11;
             if (guion > 9)
             {
@@ -98,13 +88,19 @@ namespace Lab_03_mathiascordova
 
             
         }
+        
+        public string getNomApNac()
+        {
+            return this.Nombre + " " + this.Apellido + ", "+ this.Fecha +" " + this.Nacion+ " " + this.RUT;
+        }
         public string getRUT()
         {
             return RUT;
         }
-        public string getNomApNac()
+        public string soloNom()
         {
-            return Nombre + " " + Apellido + ", "+Fecha+" " + Nacion+" "+RUT;
+            return Nombre + " " + Apellido;
         }
+        
     }  
 }

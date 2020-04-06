@@ -12,13 +12,9 @@ namespace Lab_03_mathiascordova
         private List<Producto> compras = new List<Producto>();
         private string horarioCompra;
 
-        public void setID()
-        {
-            Random random = new Random();
-            string unidad = random.Next(10).ToString();
-            string decena = random.Next(10).ToString();
-            string centena= random.Next(10).ToString();
-            this.clientID = "clientID: " + unidad + decena + centena;
+        public void setID(int unidad, int decena, int centena)
+        {            
+            this.clientID = "clientID: " + unidad.ToString() + decena.ToString() + centena.ToString();
         }
         public string getID()
         {

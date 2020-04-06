@@ -12,18 +12,18 @@ namespace Lab_03_mathiascordova
         List<Object> allEmpleados = new List<Object>();
         List<Auxiliar> allCajeros = new List<Auxiliar>();
         List<Producto> allProductos = new List<Producto>();
+        List<Producto> allCompras = new List<Producto>();
 
         public void setClientes(Cliente cliente)
         {
-            cliente.setNomApeNac();
-            cliente.setRUT();
-            cliente.setID();
+            
+            
             allClientes.Add(cliente);
 
         }
-        public void setEmpleados(Object objeto)
+        public void setEmpleados(Object persona)
         {
-            allEmpleados.Add(objeto);
+            allEmpleados.Add(persona);
         }
         public void setCajeros(Auxiliar auxi)
         {
@@ -39,6 +39,16 @@ namespace Lab_03_mathiascordova
             {
                 Console.WriteLine(allClientes[i].getNomApNac());
                 
+                
+            }
+            Console.WriteLine("");
+        }
+        public void GetProd()
+        {
+            for (int i = 0; i < allProductos.Count(); i++)
+            {
+                Console.WriteLine(allProductos[i].getDatos());
+                Console.WriteLine("");
             }
         }
         public List<Producto>  getProductos()
@@ -50,7 +60,30 @@ namespace Lab_03_mathiascordova
             for (int i =0; i < allCajeros.Count(); i++)
             {
                 Console.WriteLine(allCajeros[i].getNomApNac());
+                
             }
+            Console.WriteLine("");
         }
+        public List<Cliente> GetAllClientes()
+        {
+            return allClientes;
+        }
+        public List<Auxiliar> GetAllCajeros()
+        {
+            return allCajeros;
+        }
+        public List<Producto> GetAllProd()
+        {
+            return allProductos;
+        }
+        public void ResetAll()
+        {
+            allCajeros.Clear();
+            allClientes.Clear();
+            allCompras.Clear();
+            allProductos.Clear();
+            allEmpleados.Clear();
+        }
+
     }
 }

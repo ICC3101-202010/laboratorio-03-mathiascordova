@@ -15,9 +15,10 @@ namespace Lab_03_mathiascordova
         {
             return sueldoAux;
         }
-        public void SetSueldo(string horario)
+        public void SetSueldo(string sueldo)
         {
-            this.sueldoAux = horario;
+            this.sueldoAux = sueldo;
+            setSueldo(sueldo);
         }
         public string GetHora()
         {
@@ -26,6 +27,7 @@ namespace Lab_03_mathiascordova
         public void SetHora(string horario)
         {
             this.horaAux = horario;
+            setHorario(horario);
         }
     }
 
